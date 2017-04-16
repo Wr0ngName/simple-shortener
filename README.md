@@ -78,3 +78,8 @@ Here are the different files:
     - sunset.png: background used on the pages;
     - delete-icon.png: inline deletion button (list.php)
   - .htaccess: Denies direct access to files inside the core directory (Apache only! see above for Nginx);
+
+
+## Future
+
+Feel free to ask for more functionalties, or to develop them and request a change! ;-)
