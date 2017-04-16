@@ -1,0 +1,22 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine on
+    
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^(.*)$ ./index.php?site=$1
+</IfModule>
+
+<Files "core/database.sqlite3">
+    Order Allow,Deny
+    Deny from all
+</Files>
+
+<Files "core/bdd.php">
+    Order Allow,Deny
+    Deny from all
+</Files>
+
+<Files "core/config.php">
+    Order Allow,Deny
+    Deny from all
+</Files>
