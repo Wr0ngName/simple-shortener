@@ -13,13 +13,13 @@ These aspects have driven me to start a fork of this, and make it differently. A
 ## Prerequisites
 
 In order to run this, you need :
- - A web hosting solution (Appache, Nginx,..);
+ - A web hosting solution (Apache, Nginx,..);
  - A database and the related PHP connector (PDO) for MySQL or Sqlite3;
  - PHP 7 (I guess v5.6 is enough, not tested);
  - A webrowser supporting JavaScript;
 
  
- ## Functionnalities
+ ## Functionalities
  
  - Simple "per user" management;
  - Bookmarklet for a quick storing;
