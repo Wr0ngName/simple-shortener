@@ -2,6 +2,12 @@
 if( is_file('./install.php') ) header('Location:./install.php');
 
 include("./core/config.php");
+
+function myUrlEncode($string) {
+    $entities       = array('%21', '%2A', '%27', '%28', '%29', '%3B', '%3A', '%40', '%26', '%3D', '%2B', '%24', '%2C', '%2F', '%3F', '%25', '%23', '%5B', '%5D');
+    $replacements   = array('!', '*', "'", "(", ")", ";", ":", "@", "&", "=", "+", "$", ",", "/", "?", "%", "#", "[", "]");
+    return str_replace($entities, $replacements, urlencode($string));
+}
 ?>
 <!DOCTYPE html>
 <html>
@@ -71,7 +77,7 @@ else if ( !empty($_REQUEST['shorten']) )
 
         if( !$captcha || $check.success == true )
         {
-            $shorten = $_REQUEST['shorten'];
+            $shorten = myUrlEncode($_REQUEST['shorten']);
             if ( preg_match("_(^|[\s.:;?\-\]<\(])(https?://[-\w;/?:@&=+$\|\_.!~*\|'()\[\]%#,?]+[\w/#](\(\))?)(?=$|[\s',\|\(\).:;?\-\[\]>\)])_i", $shorten) )
             {
                 $unic = 0;
