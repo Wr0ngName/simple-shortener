@@ -5,7 +5,7 @@ A simple URL Shortener...
 
 ## Introduction
 
-Originally, I've found the sources for this project via GitHub. However, I was not satisfied by how the security was handled, nor the userID generated, and a hole bunch of details.
+Originally, I've found the sources for this project via GitHub (https://github.com/azlux/Simple-URL-Shortener). However, I was not satisfied by how the security was handled, nor the userID generated, and a hole bunch of details.
 
 These aspects have driven me to start a fork of this, and make it differently. Also, most of the functionnalties have been kept, some have been added, but a big part of this inner skeleton has been redeveloped.
 
