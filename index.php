@@ -8,6 +8,7 @@ function myUrlEncode($string) {
     $replacements   = array('!', '*', "'", "(", ")", ";", ":", "@", "&", "=", "+", "$", ",", "/", "?", "%", "#", "[", "]");
     return str_replace($entities, $replacements, urlencode($string));
 }
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -145,9 +146,9 @@ else if ( !empty($_REQUEST['shorten']) )
     else
     {
         echo '<script type="text/javascript">function sendForm(){ document.getElementById("short_form").submit(); }</script>
-        		<input type="text" name="shorten" value="'.$_REQUEST['shorten'].'" />
-                <input type="hidden" name="userID" value="'.$_REQUEST['userID'].'" id="userID2" />
-                <input type="hidden" name="comment" value="'.$_REQUEST['comment'].'" id="comment" /><br /><br />
+        		<input type="text" name="shorten" value="'.htmlentities($_REQUEST['shorten']).'" />
+                <input type="hidden" name="userID" value="'.htmlentities($_REQUEST['userID']).'" id="userID2" />
+                <input type="hidden" name="comment" value="'.htmlentities($_REQUEST['comment']).'" id="comment" /><br /><br />
                 <center><button class="button g-recaptcha" data-sitekey="'.$site.'" data-callback="sendForm">Shorten</button></center>';
 
     }

@@ -14,11 +14,6 @@ include("./core/config.php");
 	<body>
 <?php
 
-error_reporting(-1);
-error_reporting(E_ALL);
-ini_set('display_errors',TRUE);
-ini_set('display_startup_errors',TRUE);
-
 	$root_url = $_SERVER['REQUEST_URI'];
     header("Cache-Control: no-cache, must-revalidate");
 
@@ -65,7 +60,7 @@ ini_set('display_startup_errors',TRUE);
 	    while ( $row = $list->fetch(PDO::FETCH_ASSOC) )
 	    {
 		    echo "<tr><td><a href=\"./" . $row['short'] . "\" >" . $row['short'] . "</a></td>"
-		    	."<td><div class=\"comment\">" . $row['comment'] . "</div><a href=\"./" . $row['short'] . "\" >" . $row['url'] . "</a></td>"
+		    	."<td><div class=\"comment\">" . htmlentities( $row['comment'] ) . "</div><a href=\"./" . htmlentities( $row['short'] ) . "\" >" . htmlentities( $row['url'] ) . "</a></td>"
 		    	."<td>" . $row['views'] . "<a href=./list.php?userID=" . htmlentities( $_GET['userID'] ) . "&amp;delete=" . $row['short'] . " class=\"delete\" ><img src=\"./static/delete-icon.png\" /></td></tr>";
 	    }
 
